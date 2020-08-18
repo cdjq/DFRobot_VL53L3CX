@@ -1,0 +1,25 @@
+#######################################
+# Syntax Coloring Map For DFRobot_LWPS
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+DFRobot_LWPS	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+getfilterData	KEYWORD2
+getData	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+
+presure	LITERAL1
+temperature	LITERAL1

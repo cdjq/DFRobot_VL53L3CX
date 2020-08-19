@@ -84,13 +84,13 @@ int _I2CWrite(VL53LX_DEV Dev, uint8_t *pdata, uint32_t count) {
 //    int i;
     i2cwriteCount+=count;
     //HAL_I2C_Master_Transmit(Dev->I2cHandle, Dev->I2cDevAddr, pdata, count, i2c_time_out);
-    Wire.beginTransmission(0x52); // transmit to device #8
+    Wire.beginTransmission(0x29); // transmit to device #8
     for(uint8_t i = 0;i < count;i++){
       Wire.write(pdata[i]);              // sends one byte
     }
     Wire.endTransmission();    // stop transmitting
     
-
+//SerialUSB.println("aa");
 
 
     if (status) {
@@ -106,10 +106,11 @@ int _I2CRead(VL53LX_DEV Dev, uint8_t *pdata, uint32_t count) {
 
     i2creadCount+=count;
     //status = HAL_I2C_Master_Receive(Dev->I2cHandle, Dev->I2cDevAddr|1, pdata, count, i2c_time_out);
-    Wire.requestFrom(0x52, count);
+    Wire.requestFrom(0x29, count);
     for(uint8_t i = 0;i < count;i++){
       pdata[i] = Wire.read();              // sends one byte
     }
+	Wire.endTransmission(); 
     return status;
 }
 
